@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+
+  gdx-mail-server: 
+    image: "ramesesinc/mail-server:latest"
+    container_name: gdx-mail-server
+    restart: always
+    logging: 
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+    env_file:
+      - ./env.conf
+    ports:
+      - "25:25"
+
+
+  gdx-proxy-server:
+    image: "ramesesinc/gdx-proxy-server:v001"
+    container_name: gdx-proxy-server
+    restart: always
+    logging: 
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+    environment:
+      TZ: "Asia/Manila"
+    ports:
+      - "8500:80"
+
+
+  gdx-client:
+    image: "ramesesinc/gdx-client:v001"
+    container_name: gdx-client
+    restart: always
+    logging: 
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+    env_file:
+      - ./env.conf
+    ports:
+      - "8571:8571"
+    links:
+      - gdx-mail-server
+      - gdx-proxy-server
