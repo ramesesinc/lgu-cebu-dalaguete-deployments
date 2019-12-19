@@ -1,0 +1,43 @@
+import com.rameses.annotations.*
+import com.rameses.common.*
+import com.rameses.services.extended.*
+
+class DalagueteRPTReceiptService
+{
+	@Env 
+	def env 
+
+	@ActiveDB('cashreceiptrpt_dalaguete')
+	def em
+    
+    @Service('DateService')
+	def dtSvc
+
+	@Service('NumberService')
+	def numSvc
+
+	@Service('RPTUtil')
+	def util
+	
+	@Service('Var')
+	def var 
+
+	@Service('RPTBillingService')
+	def billingSvc
+
+	@DataContext('rptledger_restriction')
+	def rptledger_restrictionDb
+
+	def SCHEMA_RECEIPT 		= 'cashreceiptrpt'
+	def SCHEMA_ITEM 		= 'cashreceiptrptitem'
+
+	def RECEIPT_TYPE_ONLINE = 'online'
+	def RECEIPT_TYPE_MANUAL = 'manual'
+
+	@ProxyMethod
+	public def getItemsForPrinting(receipt) {
+		def items = em.getItemsForPrinting([rptreceiptid:receipt.objid]);
+		return items;
+	}
+
+}
