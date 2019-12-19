@@ -1,5 +1,5 @@
 [Application Server]
-IP  : 192.168.10.116
+IP  : 192.168.11.18
 User: itsm
 Pass: dalaguete
 

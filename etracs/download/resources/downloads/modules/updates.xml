@@ -1,20 +1,20 @@
 <app>
 <env>
 app.title=ETRACS 2.5 build 05 20191218_1100 (Municipality of Dalaguete)
-app.host=192.168.10.116:8070
+app.host=192.168.11.18:8070
 app.cluster=osiris3
 app.context=etracs25
-app.help=http://192.168.10.116:8080/help
+app.help=http://192.168.11.18:8080/help
 app.loader=com.rameses.osiris2.client.OsirisAppLoader
 readTimeout=300000
 connectionTimeout=5000
 
 filemgmt.enabled=false
 
-ws.host=192.168.10.116:8060
-socketio.host=192.168.10.116:7080
+ws.host=192.168.11.18:8060
+socketio.host=192.168.11.18:7080
 
-entity.app.host=192.168.10.116:8070
+entity.app.host=192.168.11.18:8070
 entity.app.context=etracs25
 </env>
 <modules> 
