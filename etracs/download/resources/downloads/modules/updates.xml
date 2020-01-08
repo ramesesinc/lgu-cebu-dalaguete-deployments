@@ -16,6 +16,9 @@ socketio.host=192.168.11.18:7080
 
 entity.app.host=192.168.11.18:8070
 entity.app.context=etracs25
+
+vehicle.app.host=192.168.11.18:8072
+vehicle.app.context=enterprise
 </env>
 <modules> 
 	<!-- custom modules -->
