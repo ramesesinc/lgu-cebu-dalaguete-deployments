@@ -5,17 +5,20 @@
  Source Server Type    : MySQL
  Source Server Version : 50640
  Source Host           : localhost:3306
- Source Schema         : vehicle_dalaguete
+ Source Schema         : dev_vehicle2
 
  Target Server Type    : MySQL
  Target Server Version : 50640
  File Encoding         : 65001
 
- Date: 08/01/2020 14:02:47
+ Date: 24/01/2020 14:30:57
 */
 
 SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
+
+CREATE DATABASE vehicle_dalaguete;
+USE vehicle_dalaguete;
 
 -- ----------------------------
 -- Table structure for sys_rule
@@ -42,27 +45,6 @@ CREATE TABLE `sys_rule` (
   CONSTRAINT `sys_rule_ibfk_1` FOREIGN KEY (`rulegroup`, `ruleset`) REFERENCES `sys_rulegroup` (`name`, `ruleset`),
   CONSTRAINT `sys_rule_ibfk_2` FOREIGN KEY (`ruleset`) REFERENCES `sys_ruleset` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sys_rule
--- ----------------------------
-BEGIN;
-INSERT INTO `sys_rule` VALUES ('RUL-14e42a95:16f708fffae:-7aaa', 'DEPLOYED', 'SET_EXTENDED_DUE_DATE', 'vehiclebilling', 'initial', 'SET_EXTENDED_DUE_DATE', NULL, 1000, NULL, NULL, '2020-01-04 21:12:06', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL-25db62ba:16f564df79a:-7728', 'DEPLOYED', 'REMOVE_MAYORS_PERMIT_IF_ADDITIONAL', 'vehicleassessment', 'summary', 'REMOVE MAYORS PERMIT IF ADDITIONAL', NULL, 50000, NULL, NULL, '2019-12-30 19:13:19', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL-2926b8f1:16f82c67f3c:-7e11', 'DEPLOYED', 'MTOP_FRANCHISE_RENEWAL_DATE', 'vehicledates', 'initial', 'MTOP FRANCHISE RENEWAL DATE', NULL, 50000, NULL, NULL, '2020-01-08 09:35:15', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL-56ac22a2:16f56c2317c:-7b1b', 'DEPLOYED', 'MTOP_NEW_RENEW_AND_CHANGE_FEES', 'vehicleassessment', 'compute-fee', 'MTOP BASIC FEES FOR NEW, RENEW, CHANGE OWNER AND CHANGE UNITS', NULL, 50000, NULL, NULL, '2019-12-30 20:30:31', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL-56ac22a2:16f56c2317c:-7ba6', 'DEPLOYED', 'ASK_APP_INFO', 'vehicleassessment', 'ask-info', 'ASK APP INFO', NULL, 50000, NULL, NULL, '2019-12-30 20:29:14', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL-57c2d992:164ee592b63:-7e1f', 'DEPLOYED', 'MOTORCYCLE_RENEWAL_DATE', 'vehicledates', 'initial', 'MOTORCYCLE RENEWAL DATE', NULL, 50000, NULL, NULL, '2018-07-31 11:29:18', 'USR-1b82c604:14cc29913bb:-7fec', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL-63d80782:16f0ef8d63b:-7da6', 'DEPLOYED', 'DROP_UNIT', 'vehicleassessment', 'compute-fee', 'DROP UNIT', NULL, 50000, NULL, NULL, '2019-12-16 21:52:56', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL-79820a3e:16f0c625123:-6529', 'APPROVED', 'MTOP_EXPIRYDATE', 'vehicledates', 'initial', 'MTOP EXPIRY DATE', NULL, 50000, NULL, NULL, '2019-12-16 11:01:30', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL17933c33:16f0d58ef1c:-710c', 'APPROVED', 'MTOP_NEW_FEES', 'vehicleassessment', 'compute-fee', 'MTOP_NEW_FEES', NULL, 50000, NULL, NULL, '2019-12-16 14:45:58', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL351e5058:16f0df7bfd7:-73ce', 'DEPLOYED', 'CHANGE_OWNER_UNIT', 'vehicleassessment', 'compute-fee', 'CHANGE OWNER UNIT', NULL, 50000, NULL, NULL, '2019-12-16 17:18:10', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL351e5058:16f0df7bfd7:-74c0', 'DEPLOYED', 'CHANGE_OWNER', 'vehicleassessment', 'compute-fee', 'CHANGE OWNER', NULL, 50000, NULL, NULL, '2019-12-16 17:17:26', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL351e5058:16f0df7bfd7:-7864', 'DEPLOYED', 'CHANGE_UNIT', 'vehicleassessment', 'compute-fee', 'CHANGE UNIT', NULL, 50000, NULL, NULL, '2019-12-16 17:15:43', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL3cf2bbd6:16ef4232a61:-7d8e', 'APPROVED', 'APPLY_PAYMENT', 'vehiclebilling', 'apply-payment', 'APPLY PAYMENT TO HANDLE PARTIAL PAYMENT', NULL, 50000, NULL, NULL, '2019-12-12 10:30:15', 'anzanoe', 'ANZANOE', 1);
-INSERT INTO `sys_rule` VALUES ('RUL4adb13dd:16c88dfc11c:-7b80', 'DEPLOYED', 'SET_BILL_ITEM_DUE_DATE', 'vehiclebilling', 'initial', 'set billitem due dates', NULL, 50000, NULL, NULL, '2019-08-13 11:02:50', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-INSERT INTO `sys_rule` VALUES ('RUL9c39035:16f0d95ddf6:-7cf8', 'APPROVED', 'MTOP_SURCHARGE_PER_YEAR', 'vehiclebilling', 'surcharge', 'MTOP_SURCHARGE_PER_YEAR', NULL, 50000, NULL, NULL, '2019-12-16 15:28:05', 'USR-6bf98eba:1254696a2c9:-7ff6', 'ADMIN', 1);
-COMMIT;
 
 -- ----------------------------
 -- Table structure for sys_rule_action
@@ -522,23 +504,6 @@ CREATE TABLE `sys_rule_deployed` (
   PRIMARY KEY (`objid`) USING BTREE,
   CONSTRAINT `sys_rule_deployed_ibfk_1` FOREIGN KEY (`objid`) REFERENCES `sys_rule` (`objid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sys_rule_deployed
--- ----------------------------
-BEGIN;
-INSERT INTO `sys_rule_deployed` VALUES ('RUL-14e42a95:16f708fffae:-7aaa', '\npackage vehiclebilling.SET_EXTENDED_DUE_DATE;\nimport vehiclebilling.*;\nimport java.util.*;\nimport com.rameses.rules.common.*;\n\nglobal RuleAction action;\n\nrule \"SET_EXTENDED_DUE_DATE\"\n	agenda-group \"initial\"\n	salience 1000\n	no-loop\n	when\n		\n		\n		BILLITEM: treasury.facts.BillItem (  BYR:year ) \n		\n		 treasury.facts.ExtensionDate (  year == BYR,EXDATE:date ) \n		\n	then\n		Map bindings = new HashMap();\n		\n		bindings.put(\"BILLITEM\", BILLITEM );\n		\n		bindings.put(\"BYR\", BYR );\n		\n		bindings.put(\"EXDATE\", EXDATE );\n		\n	Map _p0 = new HashMap();\n_p0.put( \"billitem\", BILLITEM );\n_p0.put( \"fieldname\", \"duedate\" );\n_p0.put( \"value\", (new ActionExpression(\"EXDATE\", bindings)) );\naction.execute( \"set-billitem-property\",_p0,drools);\n\nend\n\n\n	');
-INSERT INTO `sys_rule_deployed` VALUES ('RUL-25db62ba:16f564df79a:-7728', '\npackage vehicleassessment.REMOVE_MAYORS_PERMIT_IF_ADDITIONAL;\nimport vehicleassessment.*;\nimport java.util.*;\nimport com.rameses.rules.common.*;\n\nglobal RuleAction action;\n\nrule \"REMOVE_MAYORS_PERMIT_IF_ADDITIONAL\"\n	agenda-group \"summary\"\n	salience 50000\n	no-loop\n	when\n		\n		\n		VAPP: vehicle.facts.VehicleApplication (  vehicletype matches \"tricycle\" ) \n		\n		 enterprise.facts.BooleanInfo (  name matches \"IS_ADDITIONAL_UNIT\",value == true  ) \n		\n		BILLITEM: treasury.facts.BillItem (  billcode matches \"SUBACCT7013cabe:1292455dafd:-7ee0\" ) \n		\n	then\n		Map bindings = new HashMap();\n		\n		bindings.put(\"VAPP\", VAPP );\n		\n		bindings.put(\"BILLITEM\", BILLITEM );\n		\n	Map _p0 = new HashMap();\n_p0.put( \"billitem\", BILLITEM );\naction.execute( \"remove-billitem\",_p0,drools);\n\nend\n\n\n	');
-INSERT INTO `sys_rule_deployed` VALUES ('RUL-2926b8f1:16f82c67f3c:-7e11', '\npackage vehicledates.MTOP_FRANCHISE_RENEWAL_DATE;\nimport vehicledates.*;\nimport java.util.*;\nimport com.rameses.rules.common.*;\n\nglobal RuleAction action;\n\nrule \"MTOP_FRANCHISE_RENEWAL_DATE\"\n	agenda-group \"initial\"\n	salience 50000\n	no-loop\n	when\n		\n		\n		 com.rameses.rules.common.CurrentDate (  CURRDATE:date ) \n		\n		VAPP: vehicle.facts.VehicleApplication (  FDATE:nextfranchiserenewaldate <= CURRDATE,vehicletype matches \"tricycle\" ) \n		\n	then\n		Map bindings = new HashMap();\n		\n		bindings.put(\"FDATE\", FDATE );\n		\n		bindings.put(\"CURRDATE\", CURRDATE );\n		\n		bindings.put(\"VAPP\", VAPP );\n		\n	Map _p0 = new HashMap();\n_p0.put( \"tag\", \"nextfranchiserenewaldate\" );\n_p0.put( \"date\", (new ActionExpression(\"int yr = @YEAR(FDATE); int mon = @MONTH(FDATE); int day = @DAY(FDATE); return @DATE( yr + 3, mon, day );\", bindings)) );\naction.execute( \"add-vardate\",_p0,drools);\n\nend\n\n\n	');
-INSERT INTO `sys_rule_deployed` VALUES ('RUL-56ac22a2:16f56c2317c:-7b1b', '\npackage vehicleassessment.MTOP_NEW_RENEW_AND_CHANGE_FEES;\nimport vehicleassessment.*;\nimport java.util.*;\nimport com.rameses.rules.common.*;\n\nglobal RuleAction action;\n\nrule \"MTOP_NEW_RENEW_AND_CHANGE_FEES\"\n	agenda-group \"compute-fee\"\n	salience 50000\n	no-loop\n	when\n		\n		\n		VAPP: vehicle.facts.VehicleApplication (  vehicletype matches \"tricycle\",apptype matches \"NEW|RENEW|CHANGE_UNIT|CHANGE_OWNER_UNIT|CHANGE_OWNER\" ) \n		\n		 vehicle.facts.VehicleAssessYear (  YR:year ) \n		\n		 enterprise.facts.BooleanInfo (  name matches \"IS_OWNER_DRIVER\",OWNER_DRIVER:value ) \n		\n	then\n		Map bindings = new HashMap();\n		\n		bindings.put(\"VAPP\", VAPP );\n		\n		bindings.put(\"YR\", YR );\n		\n		bindings.put(\"OWNER_DRIVER\", OWNER_DRIVER );\n		\n	Map _p0 = new HashMap();\n_p0.put( \"amount\", (new ActionExpression(\"750\", bindings)) );\n_p0.put( \"billcode\", new KeyValue(\"SUBACCT7013cabe:1292455dafd:-7ee0\", \"MTOP MAYOR PERMIT\") );\n_p0.put( \"year\", (new ActionExpression(\"YR\", bindings)) );\naction.execute( \"add-billitem\",_p0,drools);\nMap _p1 = new HashMap();\n_p1.put( \"amount\", (new ActionExpression(\"75\", bindings)) );\n_p1.put( \"billcode\", new KeyValue(\"SUBACCT7013cabe:1292455dafd:-7e64\", \"MTOP POLICE CLEARANCE\") );\n_p1.put( \"year\", (new ActionExpression(\"YR\", bindings)) );\naction.execute( \"add-billitem\",_p1,drools);\nMap _p2 = new HashMap();\n_p2.put( \"amount\", (new ActionExpression(\"30\", bindings)) );\n_p2.put( \"billcode\", new KeyValue(\"SUBACCT7013cabe:1292455dafd:-7e9e\", \"MTOP STICKER\") );\n_p2.put( \"year\", (new ActionExpression(\"YR\", bindings)) );\naction.execute( \"add-billitem\",_p2,drools);\nMap _p3 = new HashMap();\n_p3.put( \"amount\", (new ActionExpression(\"75\", bindings)) );\n_p3.put( \"billcode\", new KeyValue(\"ITMACCT-76a561c8:158ddc64b60:-7392\", \"MTOP-ESPF\") );\n_p3.put( \"year\", (new ActionExpression(\"YR\", bindings)) );\naction.execute( \"add-billitem\",_p3,drools);\nMap _p4 = new HashMap();\n_p4.put( \"amount\", (new ActionExpression(\"250\", bindings)) );\n_p4.put( \"billcode\", new KeyValue(\"ITMACCT56c2dc75:15d829b906d:-6dc3\", \"MTOP- ANNUAL FRANCHISE SUPERVISORY FEE\") );\n_p4.put( \"year\", (new ActionExpression(\"YR \", bindings)) );\naction.execute( \"add-billitem\",_p4,drools);\nMap _p5 = new HashMap();\n_p5.put( \"amount\", (new ActionExpression(\"@IIF( OWNER_DRIVER == true ,  130,  260 )\", bindings)) );\n_p5.put( \"billcode\", new KeyValue(\"ITMACCT56c2dc75:15d829b906d:-6f81\", \"MTOP-LABORATORY FEE\") );\n_p5.put( \"year\", (new ActionExpression(\"YR\", bindings)) );\naction.execute( \"add-billitem\",_p5,drools);\nMap _p6 = new HashMap();\n_p6.put( \"amount\", (new ActionExpression(\"@IIF( OWNER_DRIVER == true , 100,200  )\", bindings)) );\n_p6.put( \"billcode\", new KeyValue(\"ITMACCT56c2dc75:15d829b906d:-6f69\", \"MTOP-OCCUPATIONAL CALLING\") );\n_p6.put( \"year\", (new ActionExpression(\"YR\", bindings)) );\naction.execute( \"add-billitem\",_p6,drools);\n\nend\n\n\n	');
-INSERT INTO `sys_rule_deployed` VALUES ('RUL-56ac22a2:16f56c2317c:-7ba6', '\npackage vehicleassessment.ASK_APP_INFO;\nimport vehicleassessment.*;\nimport java.util.*;\nimport com.rameses.rules.common.*;\n\nglobal RuleAction action;\n\nrule \"ASK_APP_INFO\"\n	agenda-group \"ask-info\"\n	salience 50000\n	no-loop\n	when\n		\n		\n		VAPP: vehicle.facts.VehicleApplication (  apptype matches \"NEW|RENEW|CHANGE_OWNER|CHANGE_UNIT|CHANGE_OWNER_UNIT\" ) \n		\n	then\n		Map bindings = new HashMap();\n		\n		bindings.put(\"VAPP\", VAPP );\n		\n	Map _p0 = new HashMap();\n_p0.put( \"name\", new KeyValue(\"IS_OWNER_DRIVER\", \"IS_OWNER_DRIVER\") );\n_p0.put( \"value\", (new ActionExpression(\"false\", bindings)) );\naction.execute( \"ask-info\",_p0,drools);\nMap _p1 = new HashMap();\n_p1.put( \"name\", new KeyValue(\"IS_ADDITIONAL_UNIT\", \"IS_ADDITIONAL_UNIT\") );\n_p1.put( \"value\", (new ActionExpression(\"false\", bindings)) );\naction.execute( \"ask-info\",_p1,drools);\n\nend\n\n\n	');
-INSERT INTO `sys_rule_deployed` VALUES ('RUL-57c2d992:164ee592b63:-7e1f', '\npackage vehicledates.MOTORCYCLE_RENEWAL_DATE;\nimport vehicledates.*;\nimport java.util.*;\nimport com.rameses.rules.common.*;\n\nglobal RuleAction action;\n\nrule \"MOTORCYCLE_RENEWAL_DATE\"\n	agenda-group \"initial\"\n	salience 50000\n	no-loop\n	when\n		\n		\n		VAPP: vehicle.facts.VehicleApplication (  vehicletype matches \"pedicab|tricycle\",APPDATE:appdate ) \n		\n	then\n		Map bindings = new HashMap();\n		\n		bindings.put(\"VAPP\", VAPP );\n		\n		bindings.put(\"APPDATE\", APPDATE );\n		\n	Map _p0 = new HashMap();\n_p0.put( \"tag\", \"expirydate\" );\n_p0.put( \"date\", (new ActionExpression(\"int yr = @YEAR( APPDATE  ); int mon = @MONTH( APPDATE  ); int day = @DAY( APPDATE  ); if( mon < 10 ) {      return @DATE( yr , 10,  31 );     }; else {      return @DATE( yr + 1, 10, 31 ); };\", bindings)) );\naction.execute( \"add-vardate\",_p0,drools);\n\nend\n\n\n	');
-INSERT INTO `sys_rule_deployed` VALUES ('RUL-63d80782:16f0ef8d63b:-7da6', '\npackage vehicleassessment.DROP_UNIT;\nimport vehicleassessment.*;\nimport java.util.*;\nimport com.rameses.rules.common.*;\n\nglobal RuleAction action;\n\nrule \"DROP_UNIT\"\n	agenda-group \"compute-fee\"\n	salience 50000\n	no-loop\n	when\n		\n		\n		VAPP: vehicle.facts.VehicleApplication (  vehicletype matches \"tricycle\",apptype matches \"DROP\" ) \n		\n		 vehicle.facts.VehicleAssessYear (  YR:year ) \n		\n	then\n		Map bindings = new HashMap();\n		\n		bindings.put(\"VAPP\", VAPP );\n		\n		bindings.put(\"YR\", YR );\n		\n	Map _p0 = new HashMap();\n_p0.put( \"amount\", (new ActionExpression(\"200\", bindings)) );\n_p0.put( \"billcode\", new KeyValue(\"307-12\", \"MTOP-DROPPING FEE\") );\n_p0.put( \"year\", (new ActionExpression(\"YR\", bindings)) );\naction.execute( \"add-billitem\",_p0,drools);\n\nend\n\n\n	');
-INSERT INTO `sys_rule_deployed` VALUES ('RUL351e5058:16f0df7bfd7:-73ce', '\npackage vehicleassessment.CHANGE_OWNER_UNIT;\nimport vehicleassessment.*;\nimport java.util.*;\nimport com.rameses.rules.common.*;\n\nglobal RuleAction action;\n\nrule \"CHANGE_OWNER_UNIT\"\n	agenda-group \"compute-fee\"\n	salience 50000\n	no-loop\n	when\n		\n		\n		VAPP: vehicle.facts.VehicleApplication (  vehicletype matches \"tricycle\",apptype matches \"CHANGE_OWNER_UNIT\" ) \n		\n		 vehicle.facts.VehicleAssessYear (  YR:year ) \n		\n	then\n		Map bindings = new HashMap();\n		\n		bindings.put(\"VAPP\", VAPP );\n		\n		bindings.put(\"YR\", YR );\n		\n	Map _p0 = new HashMap();\n_p0.put( \"amount\", (new ActionExpression(\"1000\", bindings)) );\n_p0.put( \"billcode\", new KeyValue(\"307-17\", \"MTOP-CHANGE UNIT\") );\n_p0.put( \"year\", (new ActionExpression(\"YR\", bindings)) );\naction.execute( \"add-billitem\",_p0,drools);\n\nend\n\n\n	');
-INSERT INTO `sys_rule_deployed` VALUES ('RUL351e5058:16f0df7bfd7:-74c0', '\npackage vehicleassessment.CHANGE_OWNER;\nimport vehicleassessment.*;\nimport java.util.*;\nimport com.rameses.rules.common.*;\n\nglobal RuleAction action;\n\nrule \"CHANGE_OWNER\"\n	agenda-group \"compute-fee\"\n	salience 50000\n	no-loop\n	when\n		\n		\n		VAPP: vehicle.facts.VehicleApplication (  vehicletype matches \"tricycle\",apptype matches \"CHANGE_OWNER\" ) \n		\n		 vehicle.facts.VehicleAssessYear (  YR:year ) \n		\n	then\n		Map bindings = new HashMap();\n		\n		bindings.put(\"VAPP\", VAPP );\n		\n		bindings.put(\"YR\", YR );\n		\n	Map _p0 = new HashMap();\n_p0.put( \"amount\", (new ActionExpression(\"1000\", bindings)) );\n_p0.put( \"billcode\", new KeyValue(\"307-15\", \"CHANGE OWNER\") );\n_p0.put( \"year\", (new ActionExpression(\"YR\", bindings)) );\naction.execute( \"add-billitem\",_p0,drools);\n\nend\n\n\n	');
-INSERT INTO `sys_rule_deployed` VALUES ('RUL351e5058:16f0df7bfd7:-7864', '\npackage vehicleassessment.CHANGE_UNIT;\nimport vehicleassessment.*;\nimport java.util.*;\nimport com.rameses.rules.common.*;\n\nglobal RuleAction action;\n\nrule \"CHANGE_UNIT\"\n	agenda-group \"compute-fee\"\n	salience 50000\n	no-loop\n	when\n		\n		\n		VAPP: vehicle.facts.VehicleApplication (  vehicletype matches \"tricycle\",apptype matches \"CHANGE_UNIT\" ) \n		\n		 vehicle.facts.VehicleAssessYear (  YR:year ) \n		\n	then\n		Map bindings = new HashMap();\n		\n		bindings.put(\"VAPP\", VAPP );\n		\n		bindings.put(\"YR\", YR );\n		\n	Map _p0 = new HashMap();\n_p0.put( \"amount\", (new ActionExpression(\"1000\", bindings)) );\n_p0.put( \"billcode\", new KeyValue(\"307-17\", \"MTOP-CHANGE UNIT\") );\n_p0.put( \"year\", (new ActionExpression(\"YR\", bindings)) );\naction.execute( \"add-billitem\",_p0,drools);\n\nend\n\n\n	');
-INSERT INTO `sys_rule_deployed` VALUES ('RUL4adb13dd:16c88dfc11c:-7b80', '\npackage vehiclebilling.SET_BILL_ITEM_DUE_DATE;\nimport vehiclebilling.*;\nimport java.util.*;\nimport com.rameses.rules.common.*;\n\nglobal RuleAction action;\n\nrule \"SET_BILL_ITEM_DUE_DATE\"\n	agenda-group \"initial\"\n	salience 50000\n	no-loop\n	when\n		\n		\n		BILLITEM: treasury.facts.BillItem (  YR:year ) \n		\n		VAPP: vehicle.facts.VehicleApplication (  apptype matches \"RENEW\" ) \n		\n		HOLIDAYS: treasury.facts.HolidayFact (   ) \n		\n	then\n		Map bindings = new HashMap();\n		\n		bindings.put(\"BILLITEM\", BILLITEM );\n		\n		bindings.put(\"YR\", YR );\n		\n		bindings.put(\"VAPP\", VAPP );\n		\n		bindings.put(\"HOLIDAYS\", HOLIDAYS );\n		\n	Map _p0 = new HashMap();\n_p0.put( \"billitem\", BILLITEM );\n_p0.put( \"fieldname\", \"duedate\" );\n_p0.put( \"value\", (new ActionExpression(\"def dt = @DATE( YR, 1 , 20 ); return @FINDNEXTWORKDAY( dt ,  HOLIDAYS, 1 );\", bindings)) );\naction.execute( \"set-billitem-property\",_p0,drools);\n\nend\n\n\n	');
-COMMIT;
 
 -- ----------------------------
 -- Table structure for sys_rule_fact
@@ -1253,28 +1218,6 @@ CREATE TABLE `vehicle_itemaccount` (
   `sortorder` int(10) DEFAULT NULL,
   PRIMARY KEY (`objid`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of vehicle_itemaccount
--- ----------------------------
-BEGIN;
-INSERT INTO `vehicle_itemaccount` VALUES ('307-12', 'MTOP-DROPPING FEE', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('307-15', 'CHANGE OWNER', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('307-17', 'MTOP-CHANGE UNIT', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('ITMACCT-418ba86:157923606da:-6d42', 'POLICE CLEARANCE', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('ITMACCT-418ba86:157923606da:-7088', 'EDUCATIONAL SUPPORT PROGRAM FEE', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('ITMACCT-5efaf218:158d81a2e88:-6156', 'MTOP -ADDITIONAL UNIT', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('ITMACCT-76a561c8:158ddc64b60:-7392', 'MTOP-ESPF', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('ITMACCT56c2dc75:15d829b906d:-6dc3', 'MTOP- ANNUAL FRANCHISE SUPERVISORY FEE', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('ITMACCT56c2dc75:15d829b906d:-6f69', 'MTOP-OCCUPATIONAL CALLING', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('ITMACCT56c2dc75:15d829b906d:-6f81', 'MTOP-LABORATORY FEE', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('SUBACCT-60b072ae:11dd4a50aee:-7f72', 'MCH FEES.', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('SUBACCT7013cabe:1292455dafd:-7e64', 'MTOP POLICE CLEARANCE', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('SUBACCT7013cabe:1292455dafd:-7e9e', 'MTOP STICKER', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('SUBACCT7013cabe:1292455dafd:-7eb1', 'MTOP FILING FEE', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('SUBACCT7013cabe:1292455dafd:-7ec0', 'MTOP FRANCHISE FEE', NULL, NULL, NULL, NULL, 0);
-INSERT INTO `vehicle_itemaccount` VALUES ('SUBACCT7013cabe:1292455dafd:-7ee0', 'MTOP MAYOR PERMIT', NULL, NULL, NULL, NULL, 0);
-COMMIT;
 
 -- ----------------------------
 -- Table structure for vehicle_payment

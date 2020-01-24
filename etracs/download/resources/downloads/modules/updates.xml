@@ -89,7 +89,7 @@ vehicle.app.context=enterprise
 	<module file="plugins/rameses-queueing.jar" version="2.55"/> 
 	<module file="plugins/rameses-gov-etracs-ctc.jar" version="2.55"/>
 
-	<module file="plugins/rameses-gov-etracs-vehicle.jar" version="1.0"/>
+	<module file="vehicle/rameses-gov-etracs-vehicle.jar" version="1.0"/>
 
 </modules>
 </app>
