@@ -24,17 +24,20 @@ services:
       options: 
         max-file: "5"
         max-size: 10m
+
     environment:
       TZ: "Asia/Manila"
+
     ports:
       - "85:80"
+
     volumes:
-      - ./download/conf.d:/etc/nginx/conf.d
-      - ./download/resources:/resources
+      - ../download/conf.d:/etc/nginx/conf.d
+      - ../download/resources:/resources
 
 
   etracs25-server:
-    image: ramesesinc/etracs25-server-municipality:255.01.004
+    image: ramesesinc/etracs25-server-municipality:255.02.001
     container_name: etracs25-server
     restart: always
     logging:
@@ -42,15 +45,17 @@ services:
       options: 
         max-file: "5"
         max-size: 10m
+
     env_file:
       - ./env.conf
+      - ../_custom/env.conf
+
     ports:
       - "8060:8060"
       - "8061:8061"
       - "8070:8070"
       - "8080:8080"
+
     volumes:
-      - ./server/datasources:/apps/server/workspace/services/datasources/ext
-      - ./server/adapters:/apps/server/workspace/services/apps/etracs25/adapters/ext
-      - ./server/connections:/apps/server/workspace/services/apps/etracs25/connections/ext
-      - ./server/modules:/apps/server/workspace/services/apps/etracs25/modules
+      - ../_res/connections:/apps/server/workspace/services/apps/etracs25/connections/ext
+      - ./modules:/apps/server/workspace/services/apps/etracs25/modules
