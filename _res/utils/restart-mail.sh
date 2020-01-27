@@ -1,8 +1,8 @@
 #!/bin/sh
-cd ~/docker/etracs
+cd ~/docker/mail
 docker-compose down
 docker system prune -f
 sleep 1
 docker-compose up -d
-docker-compose logs -f etracs25-server
+docker-compose logs -f gdx-mail-server
 cd ~

@@ -6,6 +6,4 @@
 Thumbs.db
 updates-dev.xml
 *.mp4
-videos.conf
-queue/resources/files
-queue/resources/css
+_custom
