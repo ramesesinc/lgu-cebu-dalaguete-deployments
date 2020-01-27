@@ -20,6 +20,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 CREATE DATABASE vehicle_dalaguete;
 USE vehicle_dalaguete;
 
+
+
 -- ----------------------------
 -- Table structure for sys_rule
 -- ----------------------------
