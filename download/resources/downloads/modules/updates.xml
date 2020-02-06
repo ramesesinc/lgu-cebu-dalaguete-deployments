@@ -57,19 +57,24 @@ vehicle.app.context=enterprise
  
 	<!-- etracs -->
 	<module file="etracs/rameses-etracs-main.jar" version="2.55"/>
-	<module file="etracs/rameses-gov-lgu.jar" version="2.55"/>
-	<module file="etracs/rameses-gov-lgu-treasury.jar" version="2.55"/>
-	<module file="etracs/rameses-gov-etracs-tools.jar" version="2.55"/>	
-	<module file="etracs/rameses-gov-etracs-signatory-template.jar" version="2.55"/>
+	<module file="etracs/rameses-gov-etracs-entity.jar" version="2.55"/>
 	<module file="etracs/rameses-gov-etracs-sre-report.jar" version="2.55"/>
 	<module file="etracs/rameses-gov-etracs-ngas-report.jar" version="2.55"/>
+	<module file="etracs/rameses-gov-etracs-tools.jar" version="2.55"/>	
+	<module file="etracs/rameses-gov-etracs-signatory-template.jar" version="2.55"/>
+	<module file="etracs/rameses-gov-lgu.jar" version="2.55"/>
+	<module file="etracs/rameses-gov-lgu-treasury.jar" version="2.55"/>
 
 	<!-- epayment -->
 	<module file="epayment/rameses-gov-epayment.jar" version="2.55"/>
 	<module file="epayment/rameses-gov-epayment-report.jar" version="2.55"/>
 
-	<!-- entity -->
-	<module file="entity/rameses-gov-etracs-entity.jar" version="2.55"/>
+	<!-- treasury -->
+	<module file="treasury/rameses-treasury-common.jar" version="2.55"/>
+	<module file="treasury/rameses-gov-depositslip.jar" version="2.55"/>
+	<module file="treasury/rameses-gov-treasury.jar" version="2.55"/>
+	<module file="treasury/rameses-gov-treasury-report.jar" version="2.55"/>
+	<module file="treasury/rameses-gov-treasury-tool.jar" version="2.55"/>
 
 	<!-- bpls -->
 	<module file="bpls/rameses-gov-etracs-bpls.jar" version="2.55"/>
@@ -84,13 +89,6 @@ vehicle.app.context=enterprise
 	<module file="rptis/rameses-gov-etracs-rptis-transmittal.jar" version="2.55"/>
 	<module file="rptis/rameses-gov-etracs-rptis-municipality.jar" version="2.55"/>
 
-	<!-- treasury -->
-	<module file="treasury/rameses-treasury-common.jar" version="2.55"/>
-	<module file="treasury/rameses-gov-depositslip.jar" version="2.55"/>
-	<module file="treasury/rameses-gov-treasury.jar" version="2.55"/>
-	<module file="treasury/rameses-gov-treasury-report.jar" version="2.55"/>
-	<module file="treasury/rameses-gov-treasury-tool.jar" version="2.55"/>
-
 	<!-- queue -->	
 	<module file="queue/rameses-queueing.jar" version="2.55"/> 
 
@@ -98,6 +96,6 @@ vehicle.app.context=enterprise
 	<module file="ctc/rameses-gov-etracs-ctc.jar" version="2.55"/>
 
 	<!-- vehicle -->	
-	<module file="vehicle/rameses-gov-etracs-vehicle.jar" version="1.0"/>
+	<module file="vehicle/rameses-gov-etracs-vehicle.jar" version="1.00"/>
 </modules>
 </app>

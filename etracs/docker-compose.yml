@@ -2,19 +2,6 @@ version: "3"
 
 services:
   
-  rameses-notification-server:
-    image: "ramesesinc/notification-server:1.0"
-    container_name: rameses-notification-server
-    restart: always
-    logging:
-      driver: "json-file"
-      options: 
-        max-file: "5"
-        max-size: 10m
-    ports: 
-      - "7080:8080"
-
-
   download-server:
     image: nginx:latest
     container_name: download-server
@@ -24,20 +11,17 @@ services:
       options: 
         max-file: "5"
         max-size: 10m
-
     environment:
       TZ: "Asia/Manila"
-
     ports:
       - "85:80"
-
     volumes:
       - ../download/conf.d:/etc/nginx/conf.d
       - ../download/resources:/resources
 
 
   etracs25-server:
-    image: ramesesinc/etracs25-server-municipality:255.02.001
+    image: ramesesinc/etracs25-server-municipality:255.02.002
     container_name: etracs25-server
     restart: always
     logging:
@@ -45,17 +29,15 @@ services:
       options: 
         max-file: "5"
         max-size: 10m
-
     env_file:
       - ./env.conf
       - ../_custom/env.conf
-
     ports:
       - "8060:8060"
       - "8061:8061"
       - "8070:8070"
       - "8080:8080"
-
     volumes:
-      - ../_res/connections:/apps/server/workspace/services/apps/etracs25/connections/ext
-      - ./modules:/apps/server/workspace/services/apps/etracs25/modules
+      - ./modules:/apps/etracs25/modules
+      - ../_res/connections:/apps/etracs25/connections/ext
+      - ../_custom/lgu-module:/apps/etracs25/modules/ext/lgu-module
