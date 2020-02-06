@@ -1,6 +1,6 @@
 <app>
 <env>
-app.title=ETRACS 2.5 build 05 20191218_1100 (Municipality of Dalaguete)
+app.title=ETRACS 2.5 build 05 20200206_1052 (Municipality of Dalaguete)
 app.host=192.168.11.18:8070
 app.cluster=osiris3
 app.context=etracs25
@@ -23,7 +23,7 @@ vehicle.app.context=enterprise
 <modules> 
 	<!-- custom -->
 	<module file="custom/gov-dalaguete-custom-theme.jar" version="1.3"/>
-	<module file="custom/gov-dalaguete-custom-report.jar" version="5.62"/>
+	<module file="custom/gov-dalaguete-custom-report.jar" version="5.63"/>
 	<module file="custom/landtax-report-af56.jar" version="1.5"/>
 
 	<!-- core -->
