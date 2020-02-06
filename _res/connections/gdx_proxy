@@ -1,5 +1,5 @@
 provider=script
-app.host=${app_server_ip}:8072
-app.context=enterprise
+app.host=${gdx_host}:8571
 app.cluster=osiris3
+app.context=gdx
 readTimeout=60000

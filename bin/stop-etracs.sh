@@ -1,5 +1,6 @@
 #!/bin/sh
-cd ~/docker/gdx-client
+RUN_DIR=`pwd`
+cd ../etracs
 docker-compose down
 docker system prune -f
-cd ~
+cd $RUN_DIR

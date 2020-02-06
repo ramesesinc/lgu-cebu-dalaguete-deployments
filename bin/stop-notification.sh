@@ -1,5 +1,6 @@
 #!/bin/sh
-cd ~/docker/etracs
+RUN_DIR=`pwd`
+cd ../notification
 docker-compose down
 docker system prune -f
-cd ~
+cd $RUN_DIR
