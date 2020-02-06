@@ -77,7 +77,12 @@ class CTCReceiptInterceptor {
 		if ( !res ) return; 
 
 		def info = ctcc_db.find([ objid: res.objid ]).first(); 
-		if ( info ) res.putAll( info ); 
+		if ( info ) { 
+			def payer = info.remove('payer'); 
+			if ( res.payer ) res.payer.putAll( payer ); 
+			
+			res.putAll( info ); 
+		} 
 	} 	
 
 	// ---------------------------------------------
