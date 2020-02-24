@@ -18,12 +18,12 @@ services:
     ports:
       - "9999:9999"
     volumes:
-      - ./proxy/conf.d:/etc/nginx/conf.d
-      - ./resources:/resources
+      - ./conf.d:/etc/nginx/conf.d
+      - ../_custom/queue:/resources
 
 
   queue-server:
-    image: ramesesinc/queue-server:255.01.003
+    image: ramesesinc/queue-server:255.02.002
     container_name: queue-server
     restart: always
     logging: 
@@ -33,13 +33,10 @@ services:
         max-size: "10m"
     env_file:
       - ./env.conf
-      - ./videos.conf
+      - ../_custom/env.conf
     ports:
       - "9980:8080"
       - "9970:8070"
+      - "9960:8060"
     volumes:
-      - ./resources/images/lgu-logo.png:/apps/server/web/monitor.queue/res/images/lgu-logo.png
-      - ./resources/css:/apps/server/web/monitor.queue/themes/default/css
-      - ./resources/files/queue.pg:/apps/server/web/monitor.queue/files/queue.pg
-      - ./resources/files/queueing.pg:/apps/server/web/monitor.queue/files/queueing.pg
-      - ./resources/files/queuenumber.pg:/apps/server/web/monitor.queue/files/queuenumber.pg
+      - ../_custom/images/lgu-logo.png:/webroot/res/images/lgu-logo.png
