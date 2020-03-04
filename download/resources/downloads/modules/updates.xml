@@ -1,6 +1,6 @@
 <app>
 <env>
-app.title=ETRACS 2.5 build 05 20200206_1052 (Municipality of Dalaguete)
+app.title=ETRACS 2.5 build 05 20200304_1708 (Municipality of Dalaguete)
 app.host=192.168.11.18:8070
 app.cluster=osiris3
 app.context=etracs25
@@ -28,11 +28,11 @@ vehicle.app.context=enterprise
 
 	<!-- core -->
 	<module file="core/osiris2-client-themes.jar" version="2.55"/>
-	<module file="core/osiris2-client-ui.jar" version="2.55"/>
+	<module file="core/osiris2-client-ui.jar" version="2.56"/>
 	<module file="core/osiris2-draw.jar" version="2.55"/>
 	<module file="core/osiris2-framework.jar" version="2.55"/>
 	<module file="core/osiris2-report.jar" version="2.55"/>
-	<module file="core/rameses-client-ui.jar" version="2.55"/>
+	<module file="core/rameses-client-ui.jar" version="2.56"/>
 	<module file="core/rameses-client-ui-bio.jar" version="2.55"/>
 	<module file="core/rameses-client-ui-jfx.jar" version="2.55"/>
 	<module file="core/rameses-client-notification-socketio.jar" version="2.55"/>
@@ -50,14 +50,14 @@ vehicle.app.context=enterprise
 	<module file="shared/rameses-workflow-mgmt.jar" version="2.55"/>
 	<module file="shared/rameses-enterprise.jar" version="2.55"/>
 	<module file="shared/rameses-enterprise-admin.jar" version="2.55"/>
-	<module file="shared/rameses-enterprise-entity.jar" version="2.55"/>
+	<module file="shared/rameses-enterprise-entity.jar" version="2.56"/>
 	<module file="shared/rameses-enterprise-entity-tool.jar" version="2.55"/>
 	<module file="shared/rameses-enterprise-financial.jar" version="2.55"/>
 	<module file="shared/rameses-client-notification2.jar" version="2.55"/>	
  
 	<!-- etracs -->
 	<module file="etracs/rameses-etracs-main.jar" version="2.55"/>
-	<module file="etracs/rameses-gov-etracs-entity.jar" version="2.55"/>
+	<module file="etracs/rameses-gov-etracs-entity.jar" version="2.56"/>
 	<module file="etracs/rameses-gov-etracs-sre-report.jar" version="2.55"/>
 	<module file="etracs/rameses-gov-etracs-ngas-report.jar" version="2.55"/>
 	<module file="etracs/rameses-gov-etracs-tools.jar" version="2.55"/>	
@@ -72,7 +72,7 @@ vehicle.app.context=enterprise
 	<!-- treasury -->
 	<module file="treasury/rameses-treasury-common.jar" version="2.55"/>
 	<module file="treasury/rameses-gov-depositslip.jar" version="2.55"/>
-	<module file="treasury/rameses-gov-treasury.jar" version="2.55"/>
+	<module file="treasury/rameses-gov-treasury.jar" version="2.56"/>
 	<module file="treasury/rameses-gov-treasury-report.jar" version="2.55"/>
 	<module file="treasury/rameses-gov-treasury-tool.jar" version="2.55"/>
 
