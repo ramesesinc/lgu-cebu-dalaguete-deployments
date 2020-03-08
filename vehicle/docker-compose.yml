@@ -3,7 +3,7 @@ version: "3"
 services:
 
   local-vehicle-server:
-    image: ramesesinc/local-vehicle-server:255.01.001.001
+    image: ramesesinc/local-vehicle-server:255.01.002.003
     container_name: local-vehicle-server
     restart: always
     logging: 
