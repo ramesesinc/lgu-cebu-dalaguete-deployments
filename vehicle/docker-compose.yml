@@ -3,7 +3,7 @@ version: "3"
 services:
 
   local-vehicle-server:
-    image: ramesesinc/local-vehicle-server:255.01.002.003
+    image: ramesesinc/local-vehicle-server:255.01.003.002
     container_name: local-vehicle-server
     restart: always
     logging: 
@@ -11,10 +11,14 @@ services:
       options:
         max-file: "5"
         max-size: "10m"
+
     env_file:
+      - ./env.conf
       - ../_custom/env.conf
+
     ports: 
       - "8072:8070"
+
     volumes:
-      - ./vehicleds:/apps/server/services/datasources/mainds
-      - ./connections:/apps/server/services/apps/enterprise/connections/ext
+      - ../_res/connections:/apps/enterprise/connections/ext
+      - ./vehicleds:/services/datasources/mainds
