@@ -70,7 +70,7 @@ vehicle.app.context=enterprise
 	<module file="epayment/rameses-gov-epayment-report.jar" version="2.55"/>
 
 	<!-- treasury -->
-	<module file="treasury/rameses-treasury-common.jar" version="2.55"/>
+	<module file="treasury/rameses-treasury-common.jar" version="2.56"/>
 	<module file="treasury/rameses-gov-depositslip.jar" version="2.55"/>
 	<module file="treasury/rameses-gov-treasury.jar" version="2.56"/>
 	<module file="treasury/rameses-gov-treasury-report.jar" version="2.55"/>
