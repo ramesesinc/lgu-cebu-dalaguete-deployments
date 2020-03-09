@@ -96,9 +96,9 @@ vehicle.app.context=enterprise
 	<module file="ctc/rameses-gov-etracs-ctc.jar" version="2.55"/>
 
 	<!-- vehicle -->	
-	<module file="vehicle/rameses-gov-etracs-vehicle-collection.jar" version="1.00"/>
+	<module file="vehicle/rameses-gov-etracs-vehicle-collection.jar" version="1.01"/>
 	<module file="vehicle/rameses-gov-etracs-vehicle-dalaguete.jar" version="1.00"/>	
-	<module file="vehicle/rameses-gov-etracs-vehicle.jar" version="1.02"/>
+	<module file="vehicle/rameses-gov-etracs-vehicle.jar" version="1.03"/>
 
 </modules>
 </app>
