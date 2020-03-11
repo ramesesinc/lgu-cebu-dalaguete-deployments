@@ -97,8 +97,8 @@ vehicle.app.context=enterprise
 
 	<!-- vehicle -->	
 	<module file="vehicle/rameses-gov-etracs-vehicle-collection.jar" version="1.01"/>
-	<module file="vehicle/rameses-gov-etracs-vehicle-dalaguete.jar" version="1.00"/>	
-	<module file="vehicle/rameses-gov-etracs-vehicle.jar" version="1.03"/>
+	<module file="vehicle/rameses-gov-etracs-vehicle-dalaguete.jar" version="1.01"/>	
+	<module file="vehicle/rameses-gov-etracs-vehicle.jar" version="1.04"/>
 
 </modules>
 </app>
