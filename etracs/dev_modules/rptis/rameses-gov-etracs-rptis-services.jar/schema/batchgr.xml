@@ -11,12 +11,16 @@
 		<field name="section"  caption="Section" searchable="true" indexed="true"/>
 		<field name="memoranda" />
 		<field name="appraiser_name" />
+		<field name="appraiser_title" />
 		<field name="appraiser_dtsigned" />
 		<field name="taxmapper_name" />
+		<field name="taxmapper_title" />
 		<field name="taxmapper_dtsigned" />
 		<field name="recommender_name" />
+		<field name="recommender_title" />
 		<field name="recommender_dtsigned" />
 		<field name="approver_name" />
+		<field name="approver_title" />
 		<field name="approver_dtsigned" />
 
 		<complex name="lgu" ref="sys_org" jointype="many-to-one" 
