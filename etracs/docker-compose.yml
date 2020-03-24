@@ -44,3 +44,7 @@ services:
 
       - ./dev_modules/rptis:/rptis
       - ./dev_modules/rptis/etracs_rptis.conf:/apps/etracs25/modules.conf.d/etracs_rptis.conf
+
+      - ./dev_modules/treasury/rameses-gov-treasury-services.jar:/services/modules/etracs/rameses-gov-treasury-services.jar
+      - ./dev_modules/treasury/rameses-gov-treasury-report-services.jar:/services/modules/etracs/rameses-gov-treasury-report-services.jar
+      - ./dev_modules/treasury/rameses-gov-treasury-tool-services.jar:/services/modules/etracs/rameses-gov-treasury-tool-services.jar
