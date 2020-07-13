@@ -63,3 +63,25 @@ from (
 group by 
   x.classification_objid,
   x.actualuse_objid
+
+
+[getLedgerPayments]  
+select 
+  rp.*,
+  (select max(partialled) from rptpayment_item where parentid = rp.objid) as partialled
+from rptpayment rp 
+left join cashreceipt_void cv on rp.receiptid = cv.receiptid
+where refid = $P{objid}
+and voided = 0
+and cv.objid is null 
+order by rp.fromyear desc, rp.fromqtr desc, rp.receiptno desc
+
+
+[findSubledgerTotals]
+select
+  sum(rl.totalareaha) as totalareaha,
+  sum(rl.totalmv) as totalmv,
+  sum(rl.totalav) as totalav
+from rptledger_subledger sl
+inner join rptledger rl on sl.objid = rl.objid
+where sl.parent_objid = $P{parentid}

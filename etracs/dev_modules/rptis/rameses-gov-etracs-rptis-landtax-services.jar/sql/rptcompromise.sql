@@ -92,10 +92,10 @@ SELECT
 FROM rptpayment rp 
 	INNER JOIN rptpayment_item rpi ON rp.objid = rpi.parentid
 	INNER JOIN rptledger rl ON rp.refid = rl.objid 
-	inner join rptcompromise rc on rl.objid = rc.rptledgerid
 	INNER JOIN sys_org b ON rl.barangayid = b.objid
 	inner join sys_org md on md.objid = b.parent_objid 
 	inner join sys_org pct on pct.objid = md.parent_objid
+	left join rptcompromise rc on rl.objid = rc.rptledgerid
 WHERE rp.receiptid = $P{objid}
 GROUP BY 
 	rl.owner_name, 

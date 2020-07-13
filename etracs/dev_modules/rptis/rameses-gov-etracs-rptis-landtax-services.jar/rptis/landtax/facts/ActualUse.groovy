@@ -1,17 +1,17 @@
 package rptis.landtax.facts;
 
-public class Classification 
+public class ActualUse 
 {
     String objid
     String code 
     String name  
 
-    public Classification(){}
+    public ActualUse(){}
 
-    public Classification(classification){
-        this.objid = classification?.objid
-        this.code = classification?.code
-        this.name = classification?.name
+    public ActualUse(actualuse){
+        this.objid = actualuse?.objid
+        this.code = actualuse?.code
+        this.name = actualuse?.name
     }
 
     public def toMap(){
@@ -23,7 +23,7 @@ public class Classification
     }
 
     public boolean equals(other)  {
-        if (!(other instanceof Classification)) {
+        if (!(other instanceof ActualUse)) {
             return false;
         }
         return this.objid.equals(other.objid);
