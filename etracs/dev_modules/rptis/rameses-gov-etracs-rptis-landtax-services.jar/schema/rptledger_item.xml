@@ -9,6 +9,9 @@
         <field name="av" required="true" type="decimal" />
         <field name="revtype" required="true"/>
         <field name="year" type="integer" required="true"/>
+        <field name="fromqtr" type="integer" />
+        <field name="toqtr" type="integer" />
+        <field name="year" type="integer" required="true"/>
         <field name="amount" type="decimal" required="true" />
         <field name="amtpaid" type="decimal" required="true" />
         <field name="amtdue" expr="amount - amtpaid" type="decimal" />
@@ -16,7 +19,7 @@
         <field name="taxdifference" type="boolean" required="true" />
         <field name="system" type="boolean" required="true" />
         <complex name="rptledgerfaas" ref="rptledger_faas" jointype="many-to-one" 
-            includefields="classification.objid,classification.code,actualuse.objid,actualuse.code,txntype.objid,backtax,idleland,reclassed,assessedvalue,fromyear">
+            includefields="objid,classification.objid,classification.code,actualuse.objid,actualuse.code,txntype.objid,backtax,idleland,reclassed,assessedvalue,fromyear">
                 <key field="rptledgerfaasid" target="objid" />
         </complex>
     </element>  
