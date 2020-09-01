@@ -16,5 +16,9 @@
         <complex name="parent" ref="rptpayment" jointype="many-to-one" includefields="refid,reftype,receiptid,receiptno,receiptdate" required="false">
             <key field="parentid" target="objid"/>
         </complex>
+        <complex name="rptledgerfaas" ref="rptledger_faas" jointype="many-to-one" 
+            includefields="assessedvalue" required="false">
+            <key field="rptledgerfaasid" target="objid"/>
+        </complex>
     </element>  
 </schema>

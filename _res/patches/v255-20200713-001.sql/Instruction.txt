@@ -1,0 +1,21 @@
+Change Log
+=======================================
+LANDTAX:
+  - Support qtrly effectivity of FAAS
+=======================================
+
+IMPORTANT :
+	- Backup DataBase before deploying
+	- No billing and collection for landtax while deploying
+
+=======================================
+
+1. Restart ETRACS container
+
+2. Execute script "rptis-255-03023 mysql.sql"
+
+3. Import Ruleset "rules/RULESET - rptbilling.dat"
+
+4. Import and deploy the rules "rules/RULES - remove cutoff qtrly items.dat"
+
+5. Verify billing of revised FAAS

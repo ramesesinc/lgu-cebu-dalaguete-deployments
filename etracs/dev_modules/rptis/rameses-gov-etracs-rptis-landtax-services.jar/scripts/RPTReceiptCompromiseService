@@ -494,12 +494,13 @@ class RPTReceiptCompromiseService
 		def items = em_rptpayment_item.find([parentid:pmt.objid]).list()
 		items.each{
 			def item = [:]
-			item.parentid = pmt.rptledgerid
+			item.parentid = compromise.rptledgerid
 			item.rptledgerfaasid = it.rptledgerfaasid
-			item.basicav = it.ledgerfaas.assessedvalue
-			item.sefav = it.ledgerfaas.assessedvalue
-			item.av = it.ledgerfaas.assessedvalue
-			item.revtype it.revtype 
+			item.rptledgerfaas = it.rptledgerfaas
+			item.basicav = it.rptledgerfaas.assessedvalue
+			item.sefav = it.rptledgerfaas.assessedvalue
+			item.av = it.rptledgerfaas.assessedvalue
+			item.revtype = it.revtype 
 			item.year = it.year 
 			item.amount = it.amount 
 			item.amtpaid = 0

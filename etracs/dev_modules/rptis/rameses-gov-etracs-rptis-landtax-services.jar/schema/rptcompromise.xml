@@ -67,7 +67,7 @@
 		</complex>
 
 		<complex name="rptledger" ref="rptledger" jointype="many-to-one"
-			includefields="objid,tdno,fullpin,cadastrallotno,totalmv,totalav,taxpayer.name,taxpayer.address.text,barangay.name">
+			includefields="objid,tdno,fullpin,cadastrallotno,blockno,titleno,totalmv,totalav,rputype,classcode,totalareasqm,totalareaha,taxpayer.name,taxpayer.address.text,barangay.name,administrator.name,administrator.address">
 			<key field="rptledgerid" target="objid"/>
 		</complex>
 	</element>
