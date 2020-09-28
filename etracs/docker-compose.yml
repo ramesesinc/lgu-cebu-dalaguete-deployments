@@ -40,7 +40,9 @@ services:
     volumes:
       - ./modules:/apps/etracs25/modules
       - ../_res/connections:/apps/etracs25/connections/ext
-      - ../_custom/lgu-module:/apps/etracs25/modules/ext/lgu-module
+      - ../_custom/module-server:/apps/etracs25/modules/ext/zzz-module-server
+
+      - ../ctc/server:/apps/etracs25/modules/ext/ctc
 
       - ./dev_modules/rptis:/rptis
       - ./dev_modules/rptis/etracs_rptis.conf:/apps/etracs25/modules.conf.d/etracs_rptis.conf
