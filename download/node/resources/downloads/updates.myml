@@ -1,6 +1,6 @@
 app: 
   env:
-    "app.title" : "ETRACS 2.5 build 05 20200304_1708 (Municipality of Dalaguete)"
+    "app.title" : "ETRACS 2.5 build 05 20200713 (Municipality of Dalaguete)"
     "app.host" : "${app_server_ip}:8070"
     "app.cluster" : "osiris3"
     "app.context" : "etracs25"
