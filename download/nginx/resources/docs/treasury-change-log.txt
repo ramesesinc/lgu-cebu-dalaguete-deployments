@@ -1,0 +1,86 @@
+====================
+TREASURY CHANGE LOGS
+====================
+
+--[2020-06-12]
+
+* Added new Treasury User Role: 
+  - TREASURY.LIQ_OFFICER_ADMIN
+
+
+--[2020-06-10]
+
+* Bug fixed on "af_control_detail" data 
+  for CRAAF and RAAF reporting 
+
+
+--[2020-06-10]
+
+* Added role permission to modify cashbreakdown for remittance
+
+* Bug fixed on "af_control_detail" data 
+  for CRAAF and RAAF reporting 
+
+
+--[2020-06-09]
+
+* Added new Treasury User Role: 
+  - TREASURY.COLLECTOR_ADMIN
+
+
+--[2020-06-06]
+
+* Added "lockid" field for "aftxn" table
+
+* Fixed foreign key constraints for "af_control" table 
+
+* Updated AF Inventory SQL Views
+
+* Added new Treasury User Role: 
+  - TREASURY.AFO_ADMIN
+
+
+--[2020-05-15]
+
+* Updated all Remittance SQL Views
+
+
+--[2020-05-05]
+
+* Fixed "creditmemo" table structure
+
+
+--[2020-05-04]
+
+* Bug fixed on "af_control_detail" data 
+  for CRAAF and RAAF reporting 
+
+
+--[2020-05-01]
+
+* Created new system variable 
+  "liquidation_report_show_accountable_forms" 
+  for RCD reporting option 
+
+
+--[2020-04-29]
+
+* Bug fixed on "af_control_detail" data 
+  for CRAAF and RAAF reporting 
+
+
+--[2020-04-21]
+
+* Updated Cashbook SQL Views
+
+
+--[2020-03-16]
+
+* Added the following tables: 
+  - cashreceipt_group
+  - cashreceipt_groupitem
+  - cashreceipt_plugin
+
+* Added table indexes
+
+* Updated all treasury SQL Views
