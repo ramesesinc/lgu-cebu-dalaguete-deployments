@@ -3,9 +3,9 @@
 		<field name="objid" primary="true"/>
 		<field name="title" />
 		<field name="queuesection" />
-		<complex name="collectiontype" ref="collectiontype" jointype="many-to-one" 
-			includefields="name,title,formno,handler,barcodekey">
+		<complex name="collectiontype" ref="collectiontype" jointype="many-to-one" >
 			<key field="collectiontype_objid" target="objid" />
 		</complex>
+		<field name="system" />
 	</element>
 </schema>
