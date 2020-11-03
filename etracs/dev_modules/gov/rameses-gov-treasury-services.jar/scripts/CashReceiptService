@@ -160,11 +160,11 @@ class CashReceiptService  {
 		cashreceiptEm.create( p );
 		afControlSvc.updateNextSeries( p );
 
-		if (p._paymentorderid) {
+		if ( p._paymentorderid ) { 
 			//retrieve payment order first before firing close
-			def po = paymentOrderEm.find( [objid: p._paymentorderid]).first();
-			paymentOrderSvc.close( po );
-		}	
+			def po = paymentOrderEm.find([ objid: p._paymentorderid ]).first(); 
+			if ( po ) paymentOrderSvc.close( po ); 
+		} 
 
 		return formatReport(p);
 	}	

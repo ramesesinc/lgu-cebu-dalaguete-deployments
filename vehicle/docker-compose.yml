@@ -22,3 +22,5 @@ services:
     volumes:
       - ../_res/connections:/apps/enterprise/connections/ext
       - ./vehicleds:/services/datasources/mainds
+
+      - ../_custom/module-server/vehicle:/apps/enterprise/modules/ext/zzz-module-server
