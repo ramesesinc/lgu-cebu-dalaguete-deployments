@@ -115,8 +115,8 @@ class LandTaxReportAbstractTaxCollectionService {
 
     @ProxyMethod
     def generateAbstractOfRPTCollection( params ){ 
-        String period;
 
+        String period;
         String title = 'Abstract of Real Property Tax Collection';
         if (params.collector)
             title += ' (' + params.collector.name + ')'
@@ -145,15 +145,46 @@ class LandTaxReportAbstractTaxCollectionService {
             period += ' - ' + dtsvc.format('MMMMM dd, yyyy', todate);
         }
 
+        params.pdate = dtsvc.parseDate(params.fromdate, null)
+
         params.filter = ' liq.controldate >= $P{fromdate} AND liq.controldate < $P{todate} '
         if (params.postingtype && params.postingtype.code == 'byrem'){
             params.filter = ' rem.controldate >= $P{fromdate} AND rem.controldate < $P{todate} '
         }
 
-        def items = em.getAbstractOfRPTCollection(params).each{buildPeriod(it)};
-        def advitems = em.getAbstractOfRPTCollectionAdvance(params).each{buildPeriod(it)};
+        def items = [];
+        def advitems = [];
 
-        def header = [ TITLE: title, PERIOD: period ]; 
+        if (!params.collectiontype) {
+            items = em.getAbstractOfRPTCollection(params).each{buildPeriod(it)};
+            advitems = em.getAbstractOfRPTCollectionAdvance(params).each{buildPeriod(it)};
+        } else if ('advance' == params.collectiontype.code) {
+            advitems = em.getAbstractOfRPTCollectionAdvance(params).each{buildPeriod(it)};
+        } else if ('current' == params.collectiontype.code) {
+            params.collyear = params.pdate.year
+            params.filter += ' AND rpi.year = $P{collyear}'
+            items = em.getAbstractOfRPTCollection(params).each{buildPeriod(it)};
+        } else if ('previous' == params.collectiontype.code) {
+            params.collyear = params.pdate.year
+            params.filter += ' AND rpi.year < $P{collyear}'
+            items = em.getAbstractOfRPTCollection(params).each{buildPeriod(it)};
+        } else if ('currprev' == params.collectiontype.code) {
+            params.collyear = params.pdate.year
+            params.filter += ' AND rpi.year <= $P{collyear}'
+            items = em.getAbstractOfRPTCollection(params).each{buildPeriod(it)};
+        }
+
+        def collectionTitle = ''
+        if (params.collectiontype && 'advance' != params.collectiontype.code ) {
+            collectionTitle = params.collectiontype.caption + ' ' + 'Collection'
+        }
+        
+        def header = [ 
+            TITLE: title, 
+            PERIOD: period, 
+            COLLECTIONTYPE: params.collectiontype?.title,
+            COLLECTION: collectionTitle 
+        ]; 
         return  [ header:header, items:items, advitems:advitems ]; 
     }
 
