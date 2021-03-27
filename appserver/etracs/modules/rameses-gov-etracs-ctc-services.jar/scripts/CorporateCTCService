@@ -31,6 +31,16 @@ public class CorporateCTCService {
 	public def calculateTax(ctc){
 		ctc.type = "corporate";
 		
+		if ( !ctc.billdate ) {
+			if ( ctc.receiptdate instanceof java.util.Date ) {
+				ctc.billdate = new java.sql.Date( ctc.receiptdate.time ); 
+			}
+			else if ( ctc.receiptdate instanceof String ) {
+				def sdt = ctc.receiptdate.split(' ')[0]; 
+				ctc.billdate = java.sql.Date.valueOf( sdt ); 
+			}
+		}
+		
 		def req = [:];
 		req.rulename = "ctcbilling"; 
 		req.params = ctc;

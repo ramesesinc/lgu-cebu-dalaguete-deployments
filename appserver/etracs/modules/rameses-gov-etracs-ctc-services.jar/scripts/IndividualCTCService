@@ -53,18 +53,23 @@ public class IndividualCTCService {
 		ctc.type = "individual";
 		if ( ctc.newbusiness == null ) ctc.newbusiness = false; 
 
+		if ( !ctc.billdate ) {
+			if ( ctc.receiptdate instanceof java.util.Date ) {
+				ctc.billdate = new java.sql.Date( ctc.receiptdate.time ); 
+			}
+			else if ( ctc.receiptdate instanceof String ) {
+				def sdt = ctc.receiptdate.split(' ')[0]; 
+				ctc.billdate = java.sql.Date.valueOf( sdt ); 
+			}
+		}
+
 		def req = [:];
 		req.rulename = "ctcbilling"; 
 		req.params = ctc;
 		req.include_items = true;
 		req.include_billitems = false;
-
 		return basicBillingService.execute( req );
 	}
-
-
-
-
 }
 	
 

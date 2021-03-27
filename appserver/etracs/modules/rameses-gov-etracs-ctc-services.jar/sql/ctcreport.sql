@@ -24,16 +24,16 @@ WHERE r.objid = $P{objid}
 
 [getTaxRoll]
 select 
-	rem.remittancedate, rem.txnno, rem.collector_name, 
+	rem.controldate as remittancedate, rem.controlno as txnno, rem.collector_name, 
 	cr.paidby, cr.paidbyaddress, cr.receiptdate, cr.receiptno, ei.birthdate, 
 	ctci.basictax, ctci.additionaltax, ctci.interest, 
 	(ctci.basictax + ctci.additionaltax + ctci.interest) as total, 
 	cr.objid as receiptid 
 from remittance rem 
 	inner join cashreceipt cr on cr.remittanceid = rem.objid 
-	inner join cashreceipt_ctc_individual ctci on cr.objid=ctci.objid 
-	left join entityindividual ei on cr.payer_objid=ei.objid 
-where rem.remittancedate >= $P{startdate} 
-	and rem.remittancedate < $P{enddate} 
+	inner join cashreceipt_ctc_individual ctci on ctci.objid = cr.objid 
+	left join entityindividual ei on ei.objid = cr.payer_objid 
+where rem.controldate >= $P{startdate} 
+	and rem.controldate < $P{enddate} 
 	and cr.formno='0016' 
-order by rem.remittancedate, rem.collector_name, cr.series   
+order by rem.controldate, rem.collector_name, cr.series  
