@@ -2,9 +2,9 @@ version: "3"
 
 services:
 
-  local-vehicle-server:
+  vehicle-server:
     image: ramesesinc/local-vehicle-server:255.01.003.002
-    container_name: local-vehicle-server
+    container_name: vehicle-server
     restart: always
     logging: 
       driver: "json-file"
