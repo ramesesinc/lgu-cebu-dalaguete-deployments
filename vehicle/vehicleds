@@ -1,5 +1,0 @@
-dialect=mysql
-driverClass=com.mysql.jdbc.Driver
-url=jdbc:mysql://${vehicledb_host}/${vehicledb_name}
-user=${vehicledb_user}
-pwd=${vehicledb_pass}
