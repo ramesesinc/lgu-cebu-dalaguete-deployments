@@ -1,9 +1,12 @@
 #!/bin/sh
 RUN_DIR=`pwd`
-cd ../download
-docker-compose down
-docker system prune -f
-sleep 1
-docker-compose up -d
-docker-compose logs -f nginx-download-server
+cd ..
+BASE_DIR=`pwd`
+
+cd $BASE_DIR/system/download && docker-compose down
+
+cd $BASE_DIR/system/download && docker-compose up -d
+
+cd $BASE_DIR/system/download && docker-compose logs -f
+
 cd $RUN_DIR
