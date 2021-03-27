@@ -11,16 +11,13 @@ services:
       options:
         max-file: "5"
         max-size: "10m"
-
     env_file:
       - ./env.conf
-      - ../_custom/env.conf
-
+      - ../../_res/env.conf
+      - ../../_custom/env.conf
     ports: 
       - "8072:8070"
-
     volumes:
-      - ../_res/connections:/apps/enterprise/connections/ext
-      - ./vehicleds:/services/datasources/mainds
-
-      - ../_custom/module-server/vehicle:/apps/enterprise/modules/ext/zzz-module-server
+      - ../../_res/connections:/apps/enterprise/connections/ext
+      - ../../_custom/datasources/vehicleds:/services/datasources/mainds
+      - ../../_custom/module-server/vehicle:/apps/enterprise/modules/ext/zzz-module-server
